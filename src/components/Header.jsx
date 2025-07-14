@@ -31,7 +31,7 @@ export default function Header() {
                         </span>
                     </div>
 
-                    {/* Hamburger (mobile only) */}
+                    {/* Hamburger mobile only */}
                     <div className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
                         {menuOpen ? <FaTimes /> : <FaBars />}
                     </div>
