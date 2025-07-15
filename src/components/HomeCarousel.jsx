@@ -1,15 +1,13 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 import { SliderData } from "../productData/sliderdata";
 
 const HomeCarousel = () => {
   return (
-    <div className="w-full h-[500px] bg-white">
+    <div className="w-full bg-[#e0e0e0] py-12"> {/* Darker background */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -17,27 +15,38 @@ const HomeCarousel = () => {
           delay: 3500,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="w-full h-full"
+        loop={true}
+        modules={[Autoplay]}
+        className="w-full"
       >
         {SliderData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="flex items-center justify-between h-[500px] px-8">
-              <div className="max-w-xl">
-                <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <div className="flex flex-col md:flex-row items-center justify-center max-w-7xl mx-auto px-4 lg:px-8 min-h-[400px] gap-10">
+
+              {/* Text Section */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4">
                   {item.title}
                 </h2>
-                <p className="text-gray-600">{item.desc}</p>
+                <p className="text-gray-600 text-sm sm:text-base mb-6 max-w-md">
+                  {item.desc}
+                </p>
+                <button className="bg-[#d9d9d9] hover:bg-[#cfcfcf] text-[#333] text-sm px-6 py-2 rounded-full transition">
+                  Visit Collections
+                </button>
               </div>
-              <img
-                src={item.cover}
-                alt={item.title}
-                className="w-[400px] h-[400px] object-contain"
-              />
+
+              {/* Image Section */}
+              <div className="flex justify-center">
+                <img
+                  src={item.cover}
+                  alt={item.title}
+                  className={`h-auto object-contain ${item.imageSize ||
+                    "w-[180px] sm:w-[220px] md:w-[250px] lg:w-[280px]"
+                    }`}
+                />
+              </div>
+
             </div>
           </SwiperSlide>
         ))}
