@@ -1,9 +1,11 @@
-import productImg01 from "../assets/product-images/productImg01.png";
-import productImg02 from "../assets/product-images/productImg02.png";
-import productImg08 from "../assets/product-images/productImg08.png";
-import productImg09 from "../assets/product-images/productImg09.png";
-import phone03 from "../assets/product-images/phone03.png";
-import phone04 from "../assets/product-images/phone04.png";
+// src/productData/discountProducts.js
+
+import productImg01 from "../assets/product-images/double-sofa-01.png";
+import productImg02 from "../assets/product-images/double-sofa-02.png";
+import productImg08 from "../assets/product-images/arm-chair-02.jpg";
+import productImg09 from "../assets/product-images/arm-chair-03.jpg";
+import phone03 from "../assets/product-images/phone-03.png";
+import phone04 from "../assets/product-images/phone-04.jpg";
 
 export const discountProducts = [
   {
