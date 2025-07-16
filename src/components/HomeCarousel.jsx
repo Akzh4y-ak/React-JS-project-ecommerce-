@@ -7,7 +7,7 @@ import { SliderData } from "../productData/sliderdata";
 
 const HomeCarousel = () => {
   return (
-    <div className="w-full bg-[#e0e0e0] py-12"> {/* Darker background */}
+    <div className="w-full bg-[#f6f6f6] py-12"> {/* Darker background */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

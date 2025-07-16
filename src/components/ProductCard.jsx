@@ -33,7 +33,7 @@ const ProductCard = ({ imgUrl, productName, price, discount }) => {
 
       {/* Price + Add to Cart */}
       <div className="flex justify-between items-center">
-        <span className="text-lg font-bold text-gray-800">₹{price}</span>
+        <span className="text-lg font-bold text-gray-800">${price}</span>
         <button className="border border-[#0d0d26] text-[#0d0d26] bg-white hover:bg-[#0d0d26] hover:text-white transition-colors duration-200 p-[6px] rounded-full">
           <FiPlus size={16} />
         </button>
