@@ -4,14 +4,14 @@ import { discountProducts } from "../productData/discountProducts";
 
 const DiscountProducts = () => {
   return (
-    <section className="bg-[#f6f6f6] py-6 px-2">
-      <div className="max-w-screen-xl mx-auto text-center">
-        <h2 className="text-2xl font-bold mb-5 text-gray-900">
-          Big Discount Sale
+    <section className="bg-[#f6f6f6] py-8 px-11 sm:px-4">
+      <div className="max-w-[700px] mx-auto">
+        <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">
+          Big Discount
         </h2>
 
-        {/* Reduced spacing between cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 justify-center">
+        {/* Grid: 3 equal columns with fixed width */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-6 gap-x-3">
           {discountProducts.map((item) => (
             <div key={item.id} className="flex justify-center">
               <ProductCard
