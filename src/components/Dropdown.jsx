@@ -28,7 +28,7 @@ const Dropdown = ({ onSelect }) => {
     return (
         <div
             ref={dropdownRef}
-            className="relative w-full sm:w-[180px] sm:ml-2 text-sm"
+            className="relative w-full sm:w-[200px]"
         >
             {/* Dropdown Trigger */}
             <button
@@ -46,7 +46,8 @@ const Dropdown = ({ onSelect }) => {
 
             {/* Dropdown List */}
             {isOpen && (
-                <ul className="absolute top-full left-0 w-full bg-white mt-1 rounded shadow-md z-10">
+               <ul className="absolute left-0 z-50 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-md">
+
                     {categories.map((category) => (
                         <li
                             key={category}
