@@ -1,33 +1,37 @@
+import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { products } from "../productData/products";
 import { FiSearch } from "react-icons/fi";
-import { FaChevronDown } from "react-icons/fa";
 import Dropdown from "../components/Dropdown";
 
 const Shop = () => {
-  const sofaProducts = products.filter((item) => item.category === "sofa");
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  // 🔍 Filter products based on dropdown selection
+  const filteredProducts = selectedCategory
+    ? products.filter((item) => item.category.toLowerCase() === selectedCategory.toLowerCase())
+    : products;
 
   return (
     <>
       <div
-        className="bg-cover bg-center py-10 mb-8 "
+        className="bg-cover bg-center py-10 mb-8"
         style={{
-          backgroundImage: `url('/src/assets/product-images/table.jpg')`, // ✅ update path if needed
+          backgroundImage: `url('/src/assets/product-images/table.jpg')`,
         }}
       >
         <h2 className="text-xl sm:text-4xl font-bold text-center text-white drop-shadow-md">
           Products
         </h2>
       </div>
+
       <section className="bg-white py-10 px-4">
         <div className="max-w-[800px] mx-auto">
 
           {/* 🔍 Filter + Search Row */}
           <div className="flex flex-col sm:flex-row items-center justify-start mb-10 gap-3 sm:gap-4">
             {/* Dropdown */}
-            <div >
-           <Dropdown/>
-            </div>
+            <Dropdown onSelect={(value) => setSelectedCategory(value)} />
 
             {/* Search Input */}
             <div className="relative w-full sm:flex-1 lg:w-[500px]">
@@ -42,7 +46,7 @@ const Shop = () => {
 
           {/* 🛍 Product Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-6 lg:gap-y-8">
-            {sofaProducts.map((item) => (
+            {filteredProducts.map((item) => (
               <div key={item.id} className="flex justify-center">
                 <ProductCard
                   imgUrl={item.imgUrl}
