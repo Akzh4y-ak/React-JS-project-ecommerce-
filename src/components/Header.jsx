@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { FaUser, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 
@@ -11,14 +12,16 @@ export default function Header() {
 
                 {/* Left Logo */}
                 <div className="w-32 shrink-0">
-                    <img src={logo} alt="Logo" className="w-full h-auto object-contain" />
+                    <Link to="/">
+                        <img src={logo} alt="Logo" className="w-full h-auto object-contain" />
+                    </Link>
                 </div>
 
                 {/* Center: Nav Links */}
                 <div className="hidden md:flex flex-1 justify-end space-x-8 text-[16px] font-medium text-gray-800 mr-6">
-                    <a href="#" className="hover:text-blue-600">Home</a>
-                    <a href="#" className="hover:text-blue-600">Shop</a>
-                    <a href="#" className="hover:text-blue-600">Cart</a>
+                    <Link to="/" className="hover:text-blue-600">Home</Link>
+                    <Link to="/shop" className="hover:text-blue-600">Shop</Link>
+                    <Link to="/cart" className="hover:text-blue-600">Cart</Link>
                 </div>
 
                 {/* Right: Icons */}
@@ -41,9 +44,9 @@ export default function Header() {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className="md:hidden bg-white px-6 pb-4 pt-2 border-t text-sm font-medium">
-                    <a href="#" className="block py-2 text-gray-700">Home</a>
-                    <a href="#" className="block py-2 text-gray-700">Shop</a>
-                    <a href="#" className="block py-2 text-gray-700">Cart</a>
+                    <Link to="/" className="block py-2 text-gray-700">Home</Link>
+                    <Link to="/shop" className="block py-2 text-gray-700">Shop</Link>
+                    <Link to="/cart" className="block py-2 text-gray-700">Cart</Link>
                 </div>
             )}
         </header>

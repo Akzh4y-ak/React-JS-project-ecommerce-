@@ -1,19 +1,15 @@
-import React from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import Shop from './pages/Shop'
-import ProductInfo from './pages/ProductInfo'
+import React from "react";
+import Routing from "./navigation/Routing";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { ProductProvider } from "./context/productContext"; // ✅ import the provider
 
 export default function App() {
   return (
-    <div>
-      <Header/>
-      {/* <Home/> */}
-      {/* <Shop/> */}
-      <ProductInfo/>
-      <Footer/>
-    </div>
-  )
+    <ProductProvider> {/* ✅ Wrap the whole app */}
+      <Header />
+      <Routing />
+      <Footer />
+    </ProductProvider>
+  );
 }
-
