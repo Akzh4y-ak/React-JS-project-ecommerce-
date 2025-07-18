@@ -11,7 +11,7 @@ const Shop = () => {
   // ✅ Filter logic
   const filteredProducts = products.filter((item) => {
     const matchSearch = item.productName.toLowerCase().includes(searchQuery.toLowerCase());
-
+    
     // If search query is not empty → return matches from all categories
     if (searchQuery.trim() !== "") {
       return matchSearch;
@@ -40,7 +40,7 @@ const Shop = () => {
 
           {/* 🔍 Filter + Search Row */}
           <div className="flex flex-col sm:flex-row items-center justify-start mb-10 gap-3 sm:gap-4">
-
+            
             {/* Dropdown - only works if search is empty */}
             <Dropdown onSelect={(value) => setSelectedCategory(value)} />
 
@@ -62,13 +62,13 @@ const Shop = () => {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((item) => (
                 <div key={item.id} className="flex justify-center">
-                  <ProductCard
-                    id={item.id} // ✅ Add this
-                    imgUrl={item.imgUrl}
-                    productName={item.productName}
-                    price={item.price}
-                    discount={item.discount}
-                  />
+                <ProductCard
+  id={item.id} // ✅ Add this
+  imgUrl={item.imgUrl}
+  productName={item.productName}
+  price={item.price}
+  discount={item.discount}
+/>
 
                 </div>
               ))
