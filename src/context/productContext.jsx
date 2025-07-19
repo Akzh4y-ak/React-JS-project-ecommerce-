@@ -2,10 +2,10 @@
 import React, { createContext, useContext } from "react";
 import { products } from "../productData/products";
 
-// 1. Create Context
+// Create Context
 const ProductContext = createContext();
 
-// 2. Provider Component
+// Provider Component
 export const ProductProvider = ({ children }) => {
   return (
     <ProductContext.Provider value={{ products }}>
@@ -14,7 +14,7 @@ export const ProductProvider = ({ children }) => {
   );
 };
 
-// 3. Custom Hook (for cleaner usage)
+//  Custom Hook (for cleaner usage)
 export const useProductContext = () => {
   const context = useContext(ProductContext);
   if (!context) {
