@@ -25,7 +25,7 @@ export default function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="dark" // Optional: use 'light', 'dark', or 'colored'
+        theme="light" // Optional: use 'light', 'dark', or 'colored'
       />
     </ProductProvider>
   );
